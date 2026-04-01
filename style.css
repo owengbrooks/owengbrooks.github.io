@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:     #faf9f7;
+  --text:   #1c1c1c;
+  --muted:  #6e6e6e;
+  --rule:   #d8d5d0;
+}
+
+html {
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.68;
+  padding: 0 1.5rem;
+}
+
+/* ── Layout ──────────────────────────────────────────── */
+
+.container {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 4.5rem 0 7rem;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+
+header {
+  margin-bottom: 3.75rem;
+}
+
+.name {
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.affiliation {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.25rem;
+}
+
+/* ── Navigation ──────────────────────────────────────── */
+
+nav {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.1rem;
+  display: flex;
+  gap: 2.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a.active {
+  color: var(--text);
+}
+
+/* ── Typography ──────────────────────────────────────── */
+
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  margin-top: 3rem;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  max-width: 58ch;
+  margin-bottom: 1.15rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--rule);
+}
+
+a:hover {
+  text-decoration-color: var(--text);
+}
+
+/* ── Research entries ────────────────────────────────── */
+
+.paper {
+  margin-bottom: 2.25rem;
+}
+
+.paper-title {
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.paper-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+.paper-abstract {
+  font-size: 0.92rem;
+  color: var(--muted);
+  max-width: 56ch;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.paper-links {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.paper-links a {
+  margin-right: 1.1rem;
+}
+
+/* ── CV ──────────────────────────────────────────────── */
+
+.cv-section {
+  margin-bottom: 2.5rem;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 1.1rem;
+  align-items: baseline;
+}
+
+.cv-year {
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 0.05rem;
+}
+
+.cv-body {}
+
+.cv-title {
+  display: block;
+}
+
+.cv-detail {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Misc ────────────────────────────────────────────── */
+
+.misc-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.misc-list li {
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+}
+
+.misc-list li::before {
+  content: "—";
+  margin-right: 0.6rem;
+  color: var(--muted);
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
