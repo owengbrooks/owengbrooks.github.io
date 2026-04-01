@@ -7,10 +7,10 @@
 }
 
 :root {
-  --bg:     #faf9f7;
-  --text:   #1c1c1c;
-  --muted:  #6e6e6e;
-  --rule:   #d8d5d0;
+  --bg:    #faf9f7;
+  --text:  #1c1c1c;
+  --muted: #6e6e6e;
+  --rule:  #d8d5d0;
 }
 
 html {
@@ -66,9 +66,10 @@ nav {
 }
 
 nav a {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.95rem;
   text-decoration: none;
   color: var(--muted);
-  font-size: 0.875rem;
 }
 
 nav a:hover {
@@ -116,115 +117,65 @@ a:hover {
 /* ── Research entries ────────────────────────────────── */
 
 .paper {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .paper-title {
   font-style: italic;
   display: block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+  max-width: 52ch;
+  line-height: 1.5;
 }
 
 .paper-meta {
   font-size: 0.875rem;
   color: var(--muted);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.6rem;
 }
 
 .paper-abstract {
   font-size: 0.92rem;
   color: var(--muted);
-  max-width: 56ch;
-  line-height: 1.6;
-  margin-bottom: 0;
+  max-width: 58ch;
+  line-height: 1.62;
+  margin-bottom: 0.5rem;
 }
 
 .paper-links {
   font-size: 0.875rem;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 .paper-links a {
   margin-right: 1.1rem;
 }
 
-/* ── PDF Embed ───────────────────────────────────────── */
+/* ── PDF Embeds ──────────────────────────────────────── */
 
-.pdf-section {
+.pdf-block {
   margin-bottom: 3.5rem;
 }
 
-.pdf-label {
-  font-size: 1rem;
-  font-weight: 500;
+.pdf-block-label {
   font-style: italic;
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.pdf-viewer {
-  width: 100%;
-  height: 960px;
-  border: 1px solid var(--rule);
-  display: block;
-}
-
-.pdf-fallback {
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin-top: 0.6rem;
-}
-
-/* ── CV ──────────────────────────────────────────────── */
-
-.cv-section {
-  margin-bottom: 2.5rem;
-}
-
-.cv-entry {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  gap: 0 1.5rem;
-  margin-bottom: 1.1rem;
-  align-items: baseline;
-}
-
-.cv-year {
-  font-size: 0.875rem;
-  color: var(--muted);
-  text-align: right;
-  padding-top: 0.05rem;
-}
-
-.cv-body {}
-
-.cv-title {
-  display: block;
-}
-
-.cv-detail {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--muted);
-  font-style: italic;
-}
-
-/* ── Misc ────────────────────────────────────────────── */
-
-.misc-list {
-  list-style: none;
-  margin-bottom: 2rem;
-}
-
-.misc-list li {
-  margin-bottom: 0.65rem;
   font-size: 0.95rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.65rem;
 }
 
-.misc-list li::before {
-  content: "—";
-  margin-right: 0.6rem;
-  color: var(--muted);
+.pdf-block embed {
+  display: block;
+  width: 100%;
+  height: 980px;
+  border: 1px solid var(--rule);
+}
+
+.pdf-block-link {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: block;
 }
 
 /* ── Footer ──────────────────────────────────────────── */
