@@ -8,20 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="page">
 
-  <header>
-    <p class="name">Owen Brooks</p>
-    <p class="affiliation">Economics &middot; University of Oregon</p>
+  <aside class="sidebar">
+    <p class="sidebar-name">Owen Brooks</p>
+    <p class="sidebar-affiliation">Economics &middot; University of Oregon</p>
     <nav>
       <a href="index.html">About</a>
       <a href="research.html" class="active">Research</a>
       <a href="cv.html">CV</a>
       <a href="misc.html">Misc</a>
     </nav>
-  </header>
+    <p class="sidebar-footer">owengbrooks.github.io</p>
+  </aside>
 
-  <main>
+  <main class="content">
 
     <h2>Working Papers</h2>
 
@@ -32,23 +33,22 @@
       </span>
       <p class="paper-meta">In progress &middot; 2025</p>
       <p class="paper-abstract">
-        I quantify the welfare and sectoral price effects of the McKinley
-        Tariff following Caliendo and Parro (2015) multi-sector input-output
-        hat algebra. Using a multi-sector input-output table for intermediate
-        cost shares and production data from the 1890 Census of Manufacturing,
-        I calibrate the model to 21 sectors. Predicated upon a small open
-        economy assumption, the aggregate welfare effect was +0.304%. This
-        finding reflects the heterogeneous tariff schedule that has not been
-        explored in general equilibrium. The act raised protection for
-        manufactured goods while significantly cutting tariffs on sugar,
-        chemicals, and agriculture. Input-output linkages reveal the
-        knock-on effects of the tariff on upstream industries that were on
-        the duty-free list.
+        I quantify the welfare and sectoral price effects of the McKinley Tariff
+        following Caliendo and Parro (2015) multi-sector input-output hat algebra.
+        Using a multi-sector input-output table for intermediate cost shares and
+        production data from the 1890 Census of Manufacturing, I calibrate the
+        model to 21 sectors. Predicated upon a small open economy assumption, the
+        aggregate welfare effect was +0.304%. This finding reflects the
+        heterogeneous tariff schedule that has not been explored in general
+        equilibrium. The act raised protection for manufactured goods while
+        significantly cutting tariffs on sugar, chemicals, and agriculture.
+        Input-output linkages reveal the knock-on effects of the tariff on
+        upstream industries that were on the duty-free list.
       </p>
-      <p class="paper-links">
-        <a href="#">Draft (coming soon)</a>
-        <a href="#">Data</a>
-      </p>
+      <div class="paper-links">
+        <a class="btn" href="#">Draft (coming soon)</a>
+        <a class="btn" href="#">Data</a>
+      </div>
     </div>
 
     <h2>Research Interests</h2>
@@ -60,8 +60,6 @@
     </p>
 
   </main>
-
-  <footer>Owen Brooks &middot; University of Oregon</footer>
 
 </div>
 </body>

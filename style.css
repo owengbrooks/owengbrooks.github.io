@@ -11,6 +11,7 @@
   --text:  #1c1c1c;
   --muted: #6e6e6e;
   --rule:  #d8d5d0;
+  --press: #eceae6;
 }
 
 html {
@@ -24,45 +25,50 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.68;
-  padding: 0 1.5rem;
 }
 
-/* ── Layout ──────────────────────────────────────────── */
+/* ── Page layout ─────────────────────────────────────── */
 
-.container {
-  max-width: 660px;
-  margin: 0 auto;
-  padding: 4.5rem 0 7rem;
+.page {
+  display: flex;
+  min-height: 100vh;
 }
 
-/* ── Header ──────────────────────────────────────────── */
+/* ── Sidebar ─────────────────────────────────────────── */
 
-header {
-  margin-bottom: 3.75rem;
+.sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  padding: 3.5rem 2rem 3.5rem 2.5rem;
+  border-right: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.name {
-  font-size: 1.55rem;
+.sidebar-name {
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
 }
 
-.affiliation {
-  font-size: 0.9rem;
+.sidebar-affiliation {
+  font-size: 0.82rem;
   color: var(--muted);
   font-style: italic;
-  margin-bottom: 2.25rem;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
 }
 
-/* ── Navigation ──────────────────────────────────────── */
-
 nav {
-  border-top: 1px solid var(--rule);
-  padding-top: 1.1rem;
   display: flex;
-  gap: 2.2rem;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 nav a {
@@ -70,6 +76,12 @@ nav a {
   font-size: 0.95rem;
   text-decoration: none;
   color: var(--muted);
+  padding: 0.25rem 0.4rem;
+  margin-left: -0.4rem;
+  border-radius: 3px;
+  display: inline-block;
+  transition: color 0.1s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav a:hover {
@@ -80,22 +92,39 @@ nav a.active {
   color: var(--text);
 }
 
+nav a:active {
+  background: var(--press);
+  color: var(--text);
+  transform: translateY(1px);
+}
+
+/* ── Content ─────────────────────────────────────────── */
+
+.content {
+  flex: 1;
+  padding: 3.5rem 4rem 7rem;
+  max-width: 780px;
+}
+
 /* ── Typography ──────────────────────────────────────── */
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   font-style: italic;
+  color: var(--muted);
   margin-bottom: 1.25rem;
   margin-top: 3rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
-h2:first-of-type {
+h2:first-child {
   margin-top: 0;
 }
 
 p {
-  max-width: 58ch;
+  max-width: 60ch;
   margin-bottom: 1.15rem;
 }
 
@@ -108,82 +137,191 @@ a {
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-color: var(--rule);
+  transition: text-decoration-color 0.1s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:hover {
   text-decoration-color: var(--text);
 }
 
+a:active {
+  opacity: 0.65;
+}
+
+/* ── Tactile buttons ─────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--rule);
+  padding: 0.2em 0.75em 0.15em;
+  border-radius: 3px;
+  box-shadow: 0 2px 0 var(--rule);
+  transition: box-shadow 0.06s ease, transform 0.06s ease, background 0.1s;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--press);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 var(--rule);
+  background: var(--press);
+  text-decoration: none;
+}
+
 /* ── Research entries ────────────────────────────────── */
 
 .paper {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.75rem;
 }
 
 .paper-title {
   font-style: italic;
+  font-size: 1.05rem;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
   max-width: 52ch;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .paper-meta {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--muted);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
 
 .paper-abstract {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   color: var(--muted);
-  max-width: 58ch;
-  line-height: 1.62;
-  margin-bottom: 0.5rem;
+  max-width: 60ch;
+  line-height: 1.64;
+  margin-bottom: 0.85rem;
 }
 
 .paper-links {
-  font-size: 0.875rem;
-  margin-top: 0.4rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
-.paper-links a {
-  margin-right: 1.1rem;
-}
-
-/* ── PDF Embeds ──────────────────────────────────────── */
+/* ── PDF embeds ──────────────────────────────────────── */
 
 .pdf-block {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 .pdf-block-label {
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--muted);
   display: block;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.6rem;
 }
 
 .pdf-block embed {
   display: block;
   width: 100%;
-  height: 980px;
+  height: 1000px;
   border: 1px solid var(--rule);
 }
 
 .pdf-block-link {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+  display: inline-block;
+}
+
+/* ── Misc sections ───────────────────────────────────── */
+
+.misc-section {
+  margin-bottom: 3rem;
+}
+
+.misc-entry {
+  margin-bottom: 0.8rem;
+}
+
+.misc-entry-title {
   display: block;
+}
+
+.misc-entry-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── Contact ─────────────────────────────────────────── */
+
+.contact-block {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.contact-block a {
+  color: var(--muted);
+  text-decoration-color: var(--rule);
 }
 
 /* ── Footer ──────────────────────────────────────────── */
 
-footer {
-  margin-top: 5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-  font-size: 0.8rem;
-  color: var(--muted);
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: var(--rule);
+  padding-top: 2rem;
+}
+
+/* ── Mobile ──────────────────────────────────────────── */
+
+@media (max-width: 680px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 2rem 1.5rem 1.25rem;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .sidebar-name {
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .sidebar-affiliation {
+    margin-bottom: 1.25rem;
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-left: -0.4rem;
+  }
+
+  nav a {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .content {
+    padding: 2.25rem 1.5rem 5rem;
+    max-width: 100%;
+  }
+
+  .pdf-block embed {
+    height: 75vh;
+  }
 }
